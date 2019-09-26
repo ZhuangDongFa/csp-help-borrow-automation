@@ -1,0 +1,6 @@
+[ip]
+ippa="http://"
+ipp="192.168.3.49"
+ippb="/htb/#/login"
+ip="http://192.168.3.49/htb/#/login"
+casePath=""

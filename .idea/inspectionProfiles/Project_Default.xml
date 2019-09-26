@@ -1,0 +1,16 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="src.seleniumMain_package.com_csp_loans_selenium.main.driver" />
+          <option value="src.seleniumMain_package.com_csp_loans_selenium.main.element" />
+          <option value="src.seleniumMain_package.com_csp_loans_selenium.main.elementA" />
+          <option value="selenium.webDriverWait" />
+          <option value="src.seleniumMain_master.package_selenium.keyword.keyMethod.openUrl" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
