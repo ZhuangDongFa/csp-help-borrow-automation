@@ -1,12 +1,11 @@
 #coding=utf-8
 from src.seleniumMain_master.package_selenium.keyword_selenium.keyMethod import KeyMethod
-from src.seleniumMain_master.package_selenium.reconstitution_package import execl_util
 from src.seleniumMain_master.package_selenium.reconstitution_package.execl_util import GetExecl
 class KeywordCase():
     def run_main(self):
         self.action_method = KeyMethod()
         handle_excel = GetExecl("助贷系统\\keyword.xls")
-        case_lines = GetExecl().get_lines()
+        case_lines = handle_excel.get_lines()
         print("case_lines:",case_lines)
         if case_lines:
             #判断第3列是否执行
@@ -20,8 +19,11 @@ class KeywordCase():
                     locate_mode = handle_excel.get_execl_value(i,5)
                     handle_value = handle_excel.get_execl_value(i,6)
                     send_value = handle_excel.get_execl_value(i,7)
-                    expected_result = handle_excel.get_execl_value(i,8)
-                    self.run_method(method,locate_mode,handle_value,send_value,expected_result)
+                    expected_method = handle_excel.get_execl_value(i,8)
+                    self.run_method(method,locate_mode,handle_value,send_value,expected_method)
+                    if expected_method!='':
+                        expected_method
+
                 else:
                     print("这是第%d条用例" % i+"不执行")
 

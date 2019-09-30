@@ -38,6 +38,7 @@ class Base:
 
     def __init__(self,driver):
         self.driver = driver
+        self.driver.find_element_by_link_text
 
 
     # 获取元素
@@ -57,11 +58,13 @@ class Base:
                 return self.driver.find_element_by_css_selector(name)
             elif by.__eq__("xpath"):
                 return self.driver.find_element_by_xpath(name)
+                #return self.driver.find_element_by_xpath("//*[@id='login']/form/div[4]/div/button/span")
             elif by.__eq__("linktext"):
                 return self.driver.find_element_by_link_text(name)
             elif by.__eq__(""):
                 return self.driver.f(name)
             elif by.__eq__(""):
+                elemememt = self.driver.find_element_by_name(name)
                 return self.driver.find_element_by_name(name)
             else:
                 print("输入格式错误。有以下格式"

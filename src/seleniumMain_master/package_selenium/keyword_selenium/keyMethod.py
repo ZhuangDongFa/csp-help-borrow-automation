@@ -12,6 +12,7 @@ class KeyMethod():
     def open_browser(self,browser=None):
         if browser == 'chrome':
             self.driver = webdriver.Chrome()
+            #self.driver.find_element_by_class_name().text
         elif browser == 'firefox':
             self.driver = webdriver.firefox()
         else:
@@ -35,17 +36,28 @@ class KeyMethod():
 
         pass
 
-    #输入元素send
+    #输入元素send,可删除
     def element_send_value(self,value):
         element = self.get_element()
         element.send_keys(value)
 
+    #execl_send_value
+    def send_value(self,locate_mode, handle_value, send_value):
+        #element = self.get_element(locate_mode, handle_value)
+        #element.send_keys(send_value)
+        self.get_element(locate_mode, handle_value).send_keys(send_value)
+
     #点击元素
-    def click_element(self):
-        self.get_element().click
+    def click_element(self,locate_mode, handle_value):
+        self.get_element(locate_mode, handle_value).click()
+
+    #获取预期结果，text比较处理
+    def expected_text(self,locate_mode, handle_value):
+        self.get_element(locate_mode, handle_value).text
 
     #等待
     def sleep_time(self,s=3):
+        s = int(s)
         time.sleep(s)
 
     #关闭浏览器
