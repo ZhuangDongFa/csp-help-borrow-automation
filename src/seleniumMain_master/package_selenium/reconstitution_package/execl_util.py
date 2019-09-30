@@ -45,11 +45,17 @@ class GetExecl():
         return None
     #获取单元格数据,self.table.cell(3,4).value,3行4列
     def get_execl_value(self,row,col):
-        print(self.get_lines(),row)
         if self.get_lines()>row:
             data = self.table.cell(row,col).value
-            print(data)
+            #print("获取到%d"%data)
             return data
+        return None
+
+    def get_execl_row_value(self,row):
+        rows = self.get_lines()
+        if rows != None:
+            col = self.table.row_values(row)
+            return col
         return None
 
     #写入数据
@@ -65,7 +71,7 @@ class GetExecl():
 
 
 if __name__ == '__main__':
-    a = GetExecl('助贷系统\\keyword.xls')
+    a = GetExecl('助贷系统\\keyword_selenium.xls')
     print(a.get_data())
     print(a.get_execl_value(1,1))
     print(a.set_value(7,'aaaaaaaa'),"写入数据")

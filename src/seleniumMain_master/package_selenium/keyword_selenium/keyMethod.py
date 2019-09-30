@@ -9,7 +9,7 @@ from src.seleniumMain_master.package_selenium.reconstitution_package.base import
 
 class KeyMethod():
     #打开浏览器
-    def open_browser(self,browser):
+    def open_browser(self,browser=None):
         if browser == 'chrome':
             self.driver = webdriver.Chrome()
         elif browser == 'firefox':
@@ -18,7 +18,8 @@ class KeyMethod():
             self.driver = webdriver.Edge()
 
     #打开地址
-    def get_url(self,url):
+    def open_url(self,url):
+        #self.driver.get("http://192.168.3.49/admin/#/login")
         self.driver.get(url)
 
     #定位元素
@@ -44,11 +45,12 @@ class KeyMethod():
         self.get_element().click
 
     #等待
-    def sleep_time(self):
-        time.sleepp(3)
+    def sleep_time(self,s=3):
+        time.sleep(s)
 
     #关闭浏览器
     def close_browser(self):
+        print("关闭了浏览器")
         self.driver.close()
 
 if __name__ == '__main__':
