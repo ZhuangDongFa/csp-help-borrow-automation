@@ -1,0 +1,7 @@
+#coding=utf-8
+test
+test
+2019-10-07 14:46:29,297 user_log.py <module> 10 DEBUG test 
+2019-10-07 14:50:50,931 --Ä£ï¿½é£ºuser_log.py --ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½<module> 10 DEBUG test 
+2019-10-07 14:55:47,529 --Ä£¿é£ºuser_log.py --º¯ÊýÃû£º<module> 10 DEBUG test 
+2019-10-07 15:01:37,467 --Ä£¿é£ºuser_log.py --º¯ÊýÃû£º<module> 10 DEBUG test 

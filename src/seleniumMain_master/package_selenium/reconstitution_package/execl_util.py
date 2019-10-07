@@ -14,8 +14,8 @@ class GetExecl():
     def __init__(self, execl_name=None, index=None):
         print("拿取execl数据：")
         if execl_name == None:
+            print("execl不正确是这里被执行了")
             self.execl_path = os.path.join(os.getcwd(), os.path.pardir,os.path.pardir,'config\casedata.xls')
-            print(self.execl_path)
         elif execl_name != None:
             self.execl_path = os.path.join(os.getcwd(), os.path.pardir, os.path.pardir, 'config\\', execl_name)
         if index == None:
@@ -59,13 +59,12 @@ class GetExecl():
         return None
 
     #写入数据
-    def set_value(self,row,value):
-        read_value = self.data
+    def set_value(self,row,col,value):
+        read_value = xlrd.open_workbook(self.execl_path)
         #复制数据后续写入
         execl_value = copy(read_value)
-        execl_value.get_sheet(0).write(row,9,value)
+        execl_value.get_sheet(0).write(row,col,value)
         execl_value.save(self.execl_path)
-        pass
 
 
 

@@ -633,6 +633,7 @@ body.canvas-menu.mini-navbar nav.navbar-static-side {
 	border-radius: 3px
 }
 
+
 .float-e-margins .btn {
 	margin-bottom: 5px
 }
@@ -666,15 +667,15 @@ body.canvas-menu.mini-navbar nav.navbar-static-side {
 }
 
 .btn-primary {
-	background-color: #1ab394;
-	border-color: #1ab394;
+	background-color: #6ca745;
+	border-color: rgba(255,255,255,0);
 	color: #FFF
 }
 
-.btn-primary.active,.btn-primary:active,.btn-primary:focus,.btn-primary:hover,.open .dropdown-toggle.btn-primary {
-	background-color: #18a689;
-	border-color: #18a689;
-	color: #FFF
+.btn-primary.active,.btn-primary:active,.btn-primary:focus,.btn-primary:active:focus,.btn-primary:hover,.btn-primary:active:hover,.open .dropdown-toggle.btn-primary {
+	background-color: #568637;
+	border-color: rgba(255,255,255,0);
+	color: #fff
 }
 
 .btn-primary.active,.btn-primary:active,.open .dropdown-toggle.btn-primary {
@@ -771,14 +772,14 @@ body.canvas-menu.mini-navbar nav.navbar-static-side {
 }
 
 .btn-danger {
-	background-color: #ed5565;
-	border-color: #ed5565;
+	background-color: #F25929;
+	border-color: rgba(255,255,255,0);
 	color: #FFF
 }
 
-.btn-danger.active,.btn-danger:active,.btn-danger:focus,.btn-danger:hover,.open .dropdown-toggle.btn-danger {
-	background-color: #ec4758;
-	border-color: #ec4758;
+.btn-danger.active,.btn-danger:active,.btn-danger:focus,.btn-danger:hover,.btn-danger:active:focus,.btn-danger:active:hover,.open .dropdown-toggle.btn-danger {
+	background-color: #CA390C;
+	border-color: rgba(255,255,255,0);
 	color: #FFF
 }
 
@@ -932,6 +933,7 @@ button.dim:active:before {
 	top: 7px;
 	font-size: 50px
 }
+
 
 .label {
 	background-color: #d1dade;
@@ -3202,7 +3204,8 @@ nav.page-tabs .page-tabs-content {
 }
 
 .table-bordered {
-	border: 1px solid #EBEBEB
+	border: 1px solid #EBEBEB;
+    white-space: pre-wrap;
 }
 
 .table-bordered>thead>tr>td,.table-bordered>thead>tr>th {
@@ -3547,6 +3550,7 @@ table.table-mail tr td {
 
 .ibox-tools {
 	display: inline-block;
+	/*display: none;*/
 	float: right;
 	margin-top: 0;
 	position: relative;
@@ -3710,7 +3714,7 @@ table.table-mail tr td {
 }
 
 .text-navy {
-	color: #1ab394
+	color: #70AD47
 }
 
 .text-primary {
@@ -3718,19 +3722,19 @@ table.table-mail tr td {
 }
 
 .text-success {
-	color: #1c84c6
+	color: #70AD47
 }
 
 .text-info {
-	color: #23c6c8
+	color: #555
 }
 
 .text-warning {
-	color: #f8ac59
+	color: #777777
 }
 
 .text-danger {
-	color: #ed5565
+	color: #F25929
 }
 
 .text-muted {
@@ -6965,12 +6969,21 @@ body.skin-3 {
 		font-size: 12px
 	}
 }
+.btn.active.focus,.btn.active:focus,.btn.focus,.btn:active.focus,.btn:active:focus,.btn:focus {
+    outline: 5px auto;
+}
+.chosen-container .chosen-results li.highlighted {
+  background-color: #70AD47;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(20%, #70AD47), color-stop(90%, #70AD47));
+  background-image: linear-gradient(#70AD47 20%, #70AD47 90%);
+  color: #fff;
+}
     </style>
 </head>
 <body class="gray-bg">
 <div class="row  border-bottom white-bg dashboard-header">
     <div class="col-sm-12 text-center">
-        <span style="color: #1ab394; font-size: 20px; font-weight: 700">测试报告</span>
+        <span style="color: #70AD47; font-size: 25px; font-weight: 700">测试报告</span>
     </div>
 </div>
 <div class="wrapper wrapper-content animated fadeInRight">
@@ -6978,7 +6991,7 @@ body.skin-3 {
         <div class="col-sm-12">
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
-                    <h5>报告汇总</h5>
+                    <h5 style="color: #c4c4c4; font-size: 16px">报告汇总</h5>
                     <div class="ibox-tools">
                         <a class="collapse-link">
                             <i class="fa fa-chevron-up"></i>
@@ -6993,13 +7006,13 @@ body.skin-3 {
                         <div class="col-sm-6 b-r" style="height:350px">
                             <form class="form-horizontal">
                                 <div class="form-group">
-                                    <label class="col-sm-2 control-label text-navy">用例名称:</label>
+                                    <label class="col-sm-2 control-label text-info">用例名称:</label>
                                     <div class="col-sm-5">
                                         <span class="form-control" id="testName"></span>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-sm-2 control-label text-navy">用例总数:</label>
+                                    <label class="col-sm-2 control-label text-info">用例总数:</label>
                                     <div class="col-sm-5">
                                         <span class="form-control" id="testAll"></span>
                                     </div>
@@ -7023,13 +7036,13 @@ body.skin-3 {
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-sm-2 control-label text-navy">开始时间:</label>
+                                    <label class="col-sm-2 control-label text-info">开始时间:</label>
                                     <div class="col-sm-5">
                                         <span class="form-control" id="beginTime"></span>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-sm-2 control-label text-navy">运行时间:</label>
+                                    <label class="col-sm-2 control-label text-info">运行时间:</label>
                                     <div class="col-sm-5">
                                         <span class="form-control" id="totalTime"></span>
                                     </div>
@@ -7044,11 +7057,17 @@ body.skin-3 {
             </div>
         </div>
     </div>
+    <div id="alert-tips" class="alert alert-danger alert-dismissible" role="alert">
+         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+         <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+         <strong>Warning!</strong> &nbsp;&nbsp;&nbsp;存在报错的用例，请优先查看！
+    </div>
+
     <div class="row">
         <div class="col-sm-12">
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
-                    <h5>详细数据</h5>
+                    <h5 style="color: #c4c4c4; font-size: 16px">详细数据</h5>
                     <div class="ibox-tools">
                         <a class="collapse-link">
                             <i class="fa fa-chevron-up"></i>
@@ -7059,19 +7078,19 @@ body.skin-3 {
                     </div>
                 </div>
                 <div class="ibox-content">
-                    <div class="input-group panel-heading" style="width: 100%; background-color: #1ab394; margin-bottom: 10px; text-align: left; font-family: Consolas;">
+                    <div class="input-group panel-heading" style="width: 100%; background-color: #70AD47; margin-bottom: 10px; text-align: left; font-family: Consolas;">
                         <label style="color: snow">测试类:</label>
-                        <select class="chosen-select form-control" data-placeholder="----------" style="width: 300px;" name="filterClass" id="filterClass">
-                            <option value="">----------</option>
+                        <select class="chosen-select form-control" data-placeholder="ALL" style="width: 300px;" name="filterClass" id="filterClass">
+                            <option value="">ALL</option>
                         </select>
-                        <label style="color: snow">结果:</label>
-                        <select class="chosen-select form-control" data-placeholder="----------" style="width: 300px;" name="filterResult" id="filterResult">
-                            <option value="">----------</option>
+                        <label style="color: snow;margin-left: 10px;">结果:</label>
+                        <select class="chosen-select form-control" data-placeholder="ALL" style="width: 300px;" name="filterResult" id="filterResult">
+                            <option value="">ALL</option>
                         </select>
                         <div style="float: right">
                             <label class="form-control">
-                                <span class="text-navy">用例数: </span><span class="text-navy b-r" id="filterAll">3</span><span> | </span>
-                                <span style="color: green">成功: </span><span style="color: green" id="filterOk">3</span><span> | </span>
+                                <span class="text-info">用例数: </span><span class="text-info" id="filterAll">3</span><span> | </span>
+                                <span class="text-success">成功: </span><span class="text-success" id="filterOk">3</span><span> | </span>
                                 <span class="text-danger">失败: </span><span class="text-danger" id="filterFail">3</span><span> | </span>
                                 <span class="text-warning">跳过: </span><span class="text-warning" id="filterSkip">3</span>
                             </label>
@@ -7099,65 +7118,139 @@ body.skin-3 {
 </div>
 <script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script src="js/content.min.js?v=1.0.0"></script>
 <script src="https://cdn.bootcss.com/echarts/3.8.5/echarts.min.js"></script>
 <script src="https://cdn.bootcss.com/chosen/1.8.2/chosen.jquery.js"></script>
 <script type="text/javascript">
+
+    function animationHover(o, e) {
+        o = $(o), o.hover(function () {
+            o.addClass("animated " + e)
+        }, function () {
+            window.setTimeout(function () {
+                o.removeClass("animated " + e)
+            }, 2e3)
+        })
+    }
+
+    function WinMove() {
+        var o = "[class*=col]", e = ".ibox-title", i = "[class*=col]";
+        $(o).sortable({
+            handle: e,
+            connectWith: i,
+            tolerance: "pointer",
+            forcePlaceholderSize: !0,
+            opacity: .8
+        }).disableSelection()
+    }
+
+    if ($(".tooltip-demo").tooltip({
+        selector: "[data-toggle=tooltip]",
+        container: "body"
+    }), $(".modal").appendTo("body"), $("[data-toggle=popover]").popover(), $(".collapse-link").click(function () {
+        var o = $(this).closest("div.ibox"), e = $(this).find("i"), i = o.find("div.ibox-content");
+        i.slideToggle(200), e.toggleClass("fa-chevron-up").toggleClass("fa-chevron-down"), o.toggleClass("").toggleClass("border-bottom"), setTimeout(function () {
+            o.resize(), o.find("[id^=map-]").resize()
+        }, 50)
+    }), $(".close-link").click(function () {
+        var o = $(this).closest("div.ibox");
+        o.remove()
+    }), top == this) {
+    }
+
+
     var resultData = {
-    "testPass": 3,
+    "testPass": 0,
     "testResult": [
+        {
+            "className": "_FailedTest",
+            "methodName": "keyword_case",
+            "description": null,
+            "spendTime": "0.004 s",
+            "status": "错误",
+            "log": [
+                "",
+                "Traceback (most recent call last):\n",
+                "  File \"C:\\Users\\Zing\\AppData\\Local\\Programs\\Python\\Python37\\lib\\unittest\\case.py\", line 59, in testPartExecutor\n    yield\n",
+                "  File \"C:\\Users\\Zing\\AppData\\Local\\Programs\\Python\\Python37\\lib\\unittest\\case.py\", line 628, in run\n    testMethod()\n",
+                "  File \"C:\\Users\\Zing\\AppData\\Local\\Programs\\Python\\Python37\\lib\\unittest\\loader.py\", line 34, in testFailure\n    raise self._exception\n",
+                "ImportError: Failed to import test module: keyword_case\nTraceback (most recent call last):\n  File \"C:\\Users\\Zing\\AppData\\Local\\Programs\\Python\\Python37\\lib\\unittest\\loader.py\", line 436, in _find_test_path\n    module = self._get_module_from_name(name)\n  File \"C:\\Users\\Zing\\AppData\\Local\\Programs\\Python\\Python37\\lib\\unittest\\loader.py\", line 377, in _get_module_from_name\n    __import__(name)\n  File \"D:\\AMyWorkingArea\\git\\csp-help-borrow-automation\\src\\seleniumMain_master\\package_selenium\\case\\keyword_case.py\", line 2, in <module>\n    from src.seleniumMain_master.package_selenium.keyword_selenium.keyMethod import KeyMethod\n  File \"D:\\AMyWorkingArea\\git\\csp-help-borrow-automation\\src\\seleniumMain_master\\package_selenium\\keyword_selenium\\__init__.py\", line 2\n    class *():\n          ^\nSyntaxError: invalid syntax\n\n"
+            ]
+        },
         {
             "className": "LoginCase",
             "methodName": "test_login_password_error",
             "description": null,
-            "spendTime": "7.45 s",
-            "status": "成功",
+            "spendTime": "0.017 s",
+            "status": "错误",
             "log": [
-                "每条Case的前置",
-                "请输入长度为0～20的账号",
-                "输入框验证成功",
-                "输入框验证失败验证成功,此条Case成功",
-                "True",
-                "每条case的后置",
-                ""
+                "",
+                "Traceback (most recent call last):\n",
+                "  File \"C:\\Users\\Zing\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\selenium\\webdriver\\common\\service.py\", line 76, in start\n    stdin=PIPE)\n",
+                "  File \"C:\\Users\\Zing\\AppData\\Local\\Programs\\Python\\Python37\\lib\\subprocess.py\", line 775, in __init__\n    restore_signals, start_new_session)\n",
+                "  File \"C:\\Users\\Zing\\AppData\\Local\\Programs\\Python\\Python37\\lib\\subprocess.py\", line 1178, in _execute_child\n    startupinfo)\n",
+                "FileNotFoundError: [WinError 2] 系统找不到指定的文件。\n",
+                "\nDuring handling of the above exception, another exception occurred:\n\n",
+                "Traceback (most recent call last):\n",
+                "  File \"C:\\Users\\Zing\\AppData\\Local\\Programs\\Python\\Python37\\lib\\unittest\\case.py\", line 59, in testPartExecutor\n    yield\n",
+                "  File \"C:\\Users\\Zing\\AppData\\Local\\Programs\\Python\\Python37\\lib\\unittest\\case.py\", line 624, in run\n    self.setUp()\n",
+                "  File \"D:\\AMyWorkingArea\\git\\csp-help-borrow-automation\\src\\seleniumMain_master\\package_selenium\\case\\login_case.py\", line 22, in setUp\n    self.driver = webdriver.Chrome()\n",
+                "  File \"C:\\Users\\Zing\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\selenium\\webdriver\\chrome\\webdriver.py\", line 73, in __init__\n    self.service.start()\n",
+                "  File \"C:\\Users\\Zing\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\selenium\\webdriver\\common\\service.py\", line 83, in start\n    os.path.basename(self.path), self.start_error_message)\n",
+                "selenium.common.exceptions.WebDriverException: Message: 'chromedriver' executable needs to be in PATH. Please see https://sites.google.com/a/chromium.org/chromedriver/home\n\n"
             ]
         },
         {
             "className": "LoginCase",
             "methodName": "test_login_success",
             "description": null,
-            "spendTime": "6.56 s",
-            "status": "成功",
+            "spendTime": "0.00896 s",
+            "status": "错误",
             "log": [
-                "每条Case的前置",
-                "执行成功",
-                "登录成功，此条Case成功",
-                "每条case的后置",
-                ""
+                "",
+                "Traceback (most recent call last):\n",
+                "  File \"C:\\Users\\Zing\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\selenium\\webdriver\\common\\service.py\", line 76, in start\n    stdin=PIPE)\n",
+                "  File \"C:\\Users\\Zing\\AppData\\Local\\Programs\\Python\\Python37\\lib\\subprocess.py\", line 775, in __init__\n    restore_signals, start_new_session)\n",
+                "  File \"C:\\Users\\Zing\\AppData\\Local\\Programs\\Python\\Python37\\lib\\subprocess.py\", line 1178, in _execute_child\n    startupinfo)\n",
+                "FileNotFoundError: [WinError 2] 系统找不到指定的文件。\n",
+                "\nDuring handling of the above exception, another exception occurred:\n\n",
+                "Traceback (most recent call last):\n",
+                "  File \"C:\\Users\\Zing\\AppData\\Local\\Programs\\Python\\Python37\\lib\\unittest\\case.py\", line 59, in testPartExecutor\n    yield\n",
+                "  File \"C:\\Users\\Zing\\AppData\\Local\\Programs\\Python\\Python37\\lib\\unittest\\case.py\", line 624, in run\n    self.setUp()\n",
+                "  File \"D:\\AMyWorkingArea\\git\\csp-help-borrow-automation\\src\\seleniumMain_master\\package_selenium\\case\\login_case.py\", line 22, in setUp\n    self.driver = webdriver.Chrome()\n",
+                "  File \"C:\\Users\\Zing\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\selenium\\webdriver\\chrome\\webdriver.py\", line 73, in __init__\n    self.service.start()\n",
+                "  File \"C:\\Users\\Zing\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\selenium\\webdriver\\common\\service.py\", line 83, in start\n    os.path.basename(self.path), self.start_error_message)\n",
+                "selenium.common.exceptions.WebDriverException: Message: 'chromedriver' executable needs to be in PATH. Please see https://sites.google.com/a/chromium.org/chromedriver/home\n\n"
             ]
         },
         {
             "className": "LoginCase",
             "methodName": "test_login_username_error",
             "description": null,
-            "spendTime": "7.91 s",
-            "status": "成功",
+            "spendTime": "0.00696 s",
+            "status": "错误",
             "log": [
-                "每条Case的前置",
-                "请输入长度为0～20的账号",
-                "输入框验证成功",
-                "输入框验证失败验证成功,此条Case成功",
-                "验证成功并等待2秒",
-                "每条case的后置",
-                ""
+                "",
+                "Traceback (most recent call last):\n",
+                "  File \"C:\\Users\\Zing\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\selenium\\webdriver\\common\\service.py\", line 76, in start\n    stdin=PIPE)\n",
+                "  File \"C:\\Users\\Zing\\AppData\\Local\\Programs\\Python\\Python37\\lib\\subprocess.py\", line 775, in __init__\n    restore_signals, start_new_session)\n",
+                "  File \"C:\\Users\\Zing\\AppData\\Local\\Programs\\Python\\Python37\\lib\\subprocess.py\", line 1178, in _execute_child\n    startupinfo)\n",
+                "FileNotFoundError: [WinError 2] 系统找不到指定的文件。\n",
+                "\nDuring handling of the above exception, another exception occurred:\n\n",
+                "Traceback (most recent call last):\n",
+                "  File \"C:\\Users\\Zing\\AppData\\Local\\Programs\\Python\\Python37\\lib\\unittest\\case.py\", line 59, in testPartExecutor\n    yield\n",
+                "  File \"C:\\Users\\Zing\\AppData\\Local\\Programs\\Python\\Python37\\lib\\unittest\\case.py\", line 624, in run\n    self.setUp()\n",
+                "  File \"D:\\AMyWorkingArea\\git\\csp-help-borrow-automation\\src\\seleniumMain_master\\package_selenium\\case\\login_case.py\", line 22, in setUp\n    self.driver = webdriver.Chrome()\n",
+                "  File \"C:\\Users\\Zing\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\selenium\\webdriver\\chrome\\webdriver.py\", line 73, in __init__\n    self.service.start()\n",
+                "  File \"C:\\Users\\Zing\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\selenium\\webdriver\\common\\service.py\", line 83, in start\n    os.path.basename(self.path), self.start_error_message)\n",
+                "selenium.common.exceptions.WebDriverException: Message: 'chromedriver' executable needs to be in PATH. Please see https://sites.google.com/a/chromium.org/chromedriver/home\n\n"
             ]
         }
     ],
     "testName": "测试deafult报告3",
-    "testAll": 3,
-    "testFail": 0,
-    "beginTime": "2019-09-16 15:07:59",
-    "totalTime": "22s",
+    "testAll": 4,
+    "testFail": 4,
+    "beginTime": "2019-09-29 21:08:04",
+    "totalTime": "0s",
     "testSkip": 0,
     "testError": 0
 };
@@ -7210,6 +7303,8 @@ body.skin-3 {
         $("#filterClass").chosen({search_contains: true});
         $("#filterResult").chosen({search_contains: true});
 
+        var errorFlag = false;
+
         function generateResult(className, caseResult) {
             $("#detailBody").children().remove();
             var filterAll = 0;
@@ -7222,10 +7317,14 @@ body.skin-3 {
                     var status = "";
                     if (n["status"] == '成功') {
                         filterOk += 1;
-                        status = "<td><span class='text-navy'>成功</span></td>";
+                        status = "<td><span class='text-success'>成功</span></td>";
                     } else if (n["status"] == '失败') {
                         filterFail += 1;
                         status = "<td><span class='text-danger'>失败</span></td>";
+                    } else if (n["status"] == '错误') {
+                        filterFail += 1;
+                        errorFlag = true;
+                        status = "<td><span class='text-danger'>错误</span></td>";
                     } else if (n["status"] == '跳过') {
                         filterSkip += 1;
                         status = "<td><span class='text-warning'>跳过</span></td>";
@@ -7249,6 +7348,10 @@ body.skin-3 {
         }
 
         generateResult("", "");
+        $("#alert-tips").hide();
+        if (errorFlag) {
+            $("#alert-tips").show();
+        }
 
         $("#filterClass").on('change', function () {
             var className = $("#filterClass").val();
@@ -7269,7 +7372,10 @@ body.skin-3 {
                 title: {
                     text: '测试用例运行结果',
                     subtext: '',
-                    x: 'center'
+                    x: 'center',
+                    textStyle: {
+                        "color": "#555"
+                    }
                 },
                 tooltip: {
                     trigger: 'item',
@@ -7277,7 +7383,8 @@ body.skin-3 {
                 },
                 legend: {
                     orient: 'vertical',
-                    left: 'left',
+                    y: 'center',
+                    x: 'right',
                     data: ['失败', '跳过', '成功']
                 },
                 series: [
@@ -7291,6 +7398,11 @@ body.skin-3 {
                             {value: resultData["testSkip"], name: '跳过'},
                             {value: resultData["testPass"], name: '成功'}
                         ],
+                        color: [
+                                    "#F25929",
+                                    "#777777",
+                                    "#70AD47"
+                                ],
                         itemStyle: {
                             emphasis: {
                                 shadowBlur: 10,

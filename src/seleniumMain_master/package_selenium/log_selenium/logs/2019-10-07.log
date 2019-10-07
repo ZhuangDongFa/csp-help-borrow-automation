@@ -1,0 +1,5 @@
+2019-10-07 15:05:42,158 --模块：user_log.py --函数名：<module> 10 DEBUG test 
+2019-10-07 15:06:13,311 模块：user_log.py --函数名：<module> 10 DEBUG test 
+2019-10-07 15:07:07,299 模块：user_log.py 函数名：<module> 10 BUG等级：DEBUG ----->test 
+2019-10-07 15:07:33,314 模块：user_log.py 函数名：<module> 10 日志等级：DEBUG ----->test 
+2019-10-07 21:36:15,671 模块：user_log.py 函数名：__init__ 10 日志等级：DEBUG ----->test 

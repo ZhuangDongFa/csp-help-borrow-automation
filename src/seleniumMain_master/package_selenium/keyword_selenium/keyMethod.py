@@ -12,7 +12,7 @@ class KeyMethod():
     def open_browser(self,browser=None):
         if browser == 'chrome':
             self.driver = webdriver.Chrome()
-            #self.driver.find_element_by_class_name().text
+            #self.driver.find_element_by_class_name().get_attribute('textContent')
         elif browser == 'firefox':
             self.driver = webdriver.firefox()
         else:
@@ -49,11 +49,18 @@ class KeyMethod():
 
     #点击元素
     def click_element(self,locate_mode, handle_value):
+        #print(self.get_element(locate_mode, handle_value))
         self.get_element(locate_mode, handle_value).click()
 
-    #获取预期结果，text比较处理
+    #获取预期结果text
     def expected_text(self,locate_mode, handle_value):
-        self.get_element(locate_mode, handle_value).text
+        return self.get_element(locate_mode, handle_value).get_attribute('textContent')
+
+    #获取网页标题
+    def get_text(self):
+        return self.driver.title
+
+
 
     #等待
     def sleep_time(self,s=3):
