@@ -8,7 +8,7 @@ from src.seleniumMain_master.package_selenium.reconstitution_package.execl_util 
 class KeywordCase():
     def run_main(self):
         self.action_method = KeyMethod()
-        handle_excel = GetExecl("助贷系统\\keyword.xls")
+        handle_excel = GetExecl("projectName\\keyword.xls")
         case_lines = handle_excel.get_lines()
         print("case_lines:",case_lines)
         if case_lines:
