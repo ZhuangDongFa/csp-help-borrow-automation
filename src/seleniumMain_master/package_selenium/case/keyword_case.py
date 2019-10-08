@@ -1,9 +1,10 @@
 #coding=utf-8
-from src.seleniumMain_master.package_selenium.keyword_selenium.keyMethod import KeyMethod
+from src.seleniumMain_master.package_selenium.keyword_selenium.keyMethod import KeyMethod, log, userLog
 from src.seleniumMain_master.package_selenium.log_selenium.user_log import UserLog
 from src.seleniumMain_master.package_selenium.reconstitution_package.execl_util import GetExecl
 
-log = UserLog().get_log()
+# userLog = UserLog()
+# log  = userLog.get_log()
 class KeywordCase():
     def run_main(self):
         self.action_method = KeyMethod()
@@ -17,8 +18,9 @@ class KeywordCase():
                 if is_run == 'yes':
                     #print("这是第%d条用例" % i)
                     log.debug("这是第%d条用例" % i)
-                    #print("获取到execl的数据：",handle_excel.get_execl_row_value(i))
-                    log.debug("获取到execl的数据：",handle_excel.get_execl_row_value(i))
+                    print("获取到execl的数据：",handle_excel.get_execl_row_value(i))
+                    log.info("获取到execl的数据：%s",handle_excel.get_execl_row_value(i))
+                    log.debug("获取到execl的数据：%s",handle_excel.get_execl_row_value(i))
                     step_name = handle_excel.get_execl_value(i,3)
                     method = handle_excel.get_execl_value(i,4)
                     locate_mode = handle_excel.get_execl_value(i,5)
@@ -44,8 +46,8 @@ class KeywordCase():
                         handle_excel.set_value(i,12, result)
                         #结果判断
                         if result == expected_results_vule:
-                            #handle_excel.set_value(i,13, "成功1")
-                            handle_excel.set_value(i, 13, "成功1")
+                            #handle_excel.set_value(i,13, "成功")
+                            handle_excel.set_value(i, 13, "成功")
                             print("输入数据成功")
                         elif result != expected_results_vule:
                             handle_excel.set_value(i,13, "失败")
@@ -104,4 +106,5 @@ class KeywordCase():
 
 if __name__ == '__main__':
     KeywordCase().run_main()
+    userLog.close_handle()
     print("运行完毕")

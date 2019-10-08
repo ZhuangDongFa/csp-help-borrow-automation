@@ -3,20 +3,34 @@ import time
 
 import selenium
 from selenium import webdriver
+from mock_useragent import UserAgent
+from selenium.webdriver.chrome.options import Options
 
+from src.seleniumMain_master.package_selenium.log_selenium.user_log import UserLog
 from src.seleniumMain_master.package_selenium.reconstitution_package.base import Base
 
-
+userLog = UserLog()
+log  = userLog.get_log()
 class KeyMethod():
     #打开浏览器
     def open_browser(self,browser=None):
+        # 随机生成Agent，反爬虫
+        agent = UserAgent.random_chrome
+        options = Options()
+        options.add_experimental_option("excludeSwitches", ["ignore-certificate-errors"])  # 避免一些无关紧要的报错，以下都是
+        options.add_argument('--user-agent={}'.format(agent))
+        options.add_argument('--ignore-certificate-errors')
+        options.add_argument('--ignore-ssl-errors')
+        #options.add_argument('--start-maximized')  # 窗口最大化
+        #options.add_argument('--window-size=1920,1080')  # 设置窗口大小
+        #options.add_argument('--headless')  # 后台运行，可注释掉查看自动注册流程
         if browser == 'chrome':
-            self.driver = webdriver.Chrome()
+            self.driver = webdriver.Chrome(chrome_options=options)
             #self.driver.find_element_by_class_name().get_attribute('textContent')
         elif browser == 'firefox':
-            self.driver = webdriver.firefox()
+            self.driver = webdriver.firefox(chrome_options=options)
         else:
-            self.driver = webdriver.Edge()
+            self.driver = webdriver.Edge(chrome_options=options)
 
     #打开地址
     def open_url(self,url):
@@ -27,12 +41,13 @@ class KeyMethod():
     def get_element(self,by,name):
         try:
             #显示等待
-            self.driver.implicitly_wait(15)
+            self.driver.implicitly_wait(10)
             find_ement = Base(self.driver)
             element = find_ement.element(by,name)
             return element
         except selenium.common.exceptions.NoSuchElementException:
             print('网页加载不出来')
+            log.debug('网页加载不出来')
 
         pass
 

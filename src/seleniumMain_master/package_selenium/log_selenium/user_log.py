@@ -20,22 +20,34 @@ class UserLog(object):
         log_file=datetime.datetime.now().strftime("%Y-%m-%d")+".log"
         log_name=log_dir+"/"+log_file
 
-        #文件输出日志
-        file_handle = logging.FileHandler(log_name,'a',encoding='utf-8')
-        formatter = logging.Formatter('%(asctime)s 模块：%(filename)s 函数名：%(funcName)s %(levelno)s 日志等级：%(levelname)s ----->%(message)s ')
-        file_handle.setFormatter(formatter)
-        self.logger.addHandler(file_handle)
+        # 文件输出日志
+        self.file_handle = logging.FileHandler(log_name, 'a', encoding='utf-8')
+        self. file_handle. setLevel(logging. INFO)#日志级别
+        formatter = logging.Formatter(
+            '%(asctime)s 模块：%(filename)s 函数名：%(funcName)s %(levelno)s 日志等级：%(levelname)s ----->%(message)s ')
+        self.file_handle.setFormatter(formatter)
+        self.logger.addHandler(self.file_handle)
 
+    def get_log(self):
+        return self.logger
+
+
+
+    #关闭流
+    def close_handle(self):
+        self.file_handle.close()
+        self.logger.removeHandler(self.file_handle)
 
         logging.debug("test")
 
-        file_handle.close()
-        self.logger.removeHandler(file_handle)
 
     def get_log(self):
         return self.logger
 
 
 if __name__ == '__main__':
-    user = UserLog().get_log()
-    user.debug("aaaaaaaa")
+    user = UserLog()
+    log  = user.get_log()
+    log.debug("aaaaaaaa1")
+    log.debug("aaaaaaaa1")
+    user.get_log()
