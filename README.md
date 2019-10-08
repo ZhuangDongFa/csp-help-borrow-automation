@@ -9,4 +9,4 @@ keyword.xls
 
 运行csp-help-borrow-automation \ src \ seleniumMain_master \ package_selenium \ case \ keyword_case.py即可
 
-雏形还有很多待优化
+雏形还有很多待优化，供学习
