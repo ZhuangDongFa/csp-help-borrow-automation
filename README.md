@@ -9,4 +9,7 @@ keyword.xls
 
 运行csp-help-borrow-automation \ src \ seleniumMain_master \ package_selenium \ case \ keyword_case.py即可
 
+流程：填写execl用例，执行py，输出报告，日志，用例截图（以项目名\时间\用例名）放置。
+
 雏形还有很多待优化，供学习
+2019年10月10不再优化。噗
